@@ -1,7 +1,12 @@
 .main-section{
     margin: 0 auto;
-    margin-top:  25%;
+    margin-top:  15%;
     padding: 0;
+}
+
+.titulo{
+    color: white;
+    font-size: 22px;
 }
 
 .modal-content{

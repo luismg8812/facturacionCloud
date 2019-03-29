@@ -63,3 +63,8 @@ button{
 .forgot a{
     color: white;
 }
+
+.footer{
+    text-align: right;
+    color: white;
+}

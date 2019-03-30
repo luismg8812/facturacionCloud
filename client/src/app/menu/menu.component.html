@@ -7,8 +7,8 @@
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+  <div class="collapse navbar-collapse justify-content-end menu-style" id="navbarNav">
+    <ul class="navbar-nav ">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -64,6 +64,9 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/login" (click)="cerrarSesision()">Cerrar Session</a>
+        </li>
     </ul>
   </div>
 </nav>

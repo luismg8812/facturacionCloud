@@ -15,4 +15,5 @@ export class UsuarioService {
       this.afauth.auth.signInWithEmailAndPassword(usuario, clave).then(userData => resolve(userData), err => reject(err))
     });
   }
+  
 }

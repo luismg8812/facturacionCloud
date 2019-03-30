@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.usuarioService.loginUsuario(usuario,clave).then(res =>{
+      sessionStorage.setItem("userLogin",usuario);  
       console.log(res);
       this.router.navigate(['/menu']);
     }).catch(err =>{
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
           errorEspanol = 'Error, clave o usuario invalidos';
           break;
         default:
-          errorEspanol = 'Error en autenticación, contacte a su proveedor'
+          errorEspanol = 'Error en autenticación, usuario o contraseña invalidos'
           break;
       }
       alert(errorEspanol);
@@ -42,32 +43,14 @@ export class LoginComponent implements OnInit {
   }
 
   public observador() {
-    this.afauth.auth.onAuthStateChanged(function (user) {
-      if (user) {
-        console.log('usuario logueado');
-        var displayName = user.displayName;
-        var email = user.email;
-        var emailVerified = user.emailVerified;
-        var photoURL = user.photoURL;
-        var isAnonymous = user.isAnonymous;
-        var uid = user.uid;
-        var providerData = user.providerData;
-        
-        // ...
-      } else {
-        console.log('usuario no logueado');
-        // User is signed out.
-        // ...
-      }
-    });
+    var user = sessionStorage.getItem('userLogin');
+        if (user) {
+          this.router.navigate(['/menu']);
+        } else {
+          this.router.navigate(['/login']);
+        }
+   
   }
 
-  public cerrarSesision() {
-    this.afauth.auth.signOut().then(function () {
-     console.log("session cerrada");
-    }).catch(function (error) {
-      // An error happened.
-    });
   
-  }
 }

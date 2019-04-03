@@ -5,6 +5,7 @@ class IndexControllers{
         res.send("intro index server");
     }
 
-}
+} 
+
 
 export const indexControllers = new IndexControllers();

@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
-const indexRoutes_1 = __importDefault(require("../routes/indexRoutes"));
-const usuarioRoutes_1 = __importDefault(require("../routes/usuarioRoutes"));
+const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
+const usuarioRoutes_1 = __importDefault(require("./routes/usuarioRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();

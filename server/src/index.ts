@@ -1,8 +1,8 @@
 import express, {Application} from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-import indexRoutes from "../routes/indexRoutes";
-import usuarioRoutes from "../routes/usuarioRoutes";
+import indexRoutes from "./routes/indexRoutes";
+import usuarioRoutes from "./routes/usuarioRoutes";
 
 class Server{
    public app:Application;

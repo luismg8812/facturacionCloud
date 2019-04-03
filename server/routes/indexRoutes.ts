@@ -1,15 +1,16 @@
 import {Router} from 'express';
+import { indexControllers } from '../coontrollers/indexControllers';
 
 class IndexRoutes{
 
     public router:Router =  Router();
     
     constructor(){
-         
+         this.config();
     }
 
     config():void{
-        this.router.get('/',(req,res)=>{res.send('hola mundo')});
+        this.router.get('/',indexControllers.index);
     }
 }
 const indexRoutes= new IndexRoutes();
